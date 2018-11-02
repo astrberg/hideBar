@@ -9,12 +9,7 @@ function Frame:OnEvent(event, ...)
         local addon = ...
     if addon == "hideBar" then
  
-   
-    -- Multibar
-    MultiBarBottomRight:SetAlpha(0)
-    MultiBarBottomLeft:SetAlpha(0)
-    
-    -- Hide frame and buttons
+    -- Hide specific frames and buttons
     MainMenuBarArtFrameBackground:Hide()
     MainMenuBarArtFrame.LeftEndCap:Hide()
     MainMenuBarArtFrame.RightEndCap:Hide()
@@ -23,11 +18,22 @@ function Frame:OnEvent(event, ...)
     StatusTrackingBarManager:Hide()
     MainMenuBarArtFrame.PageNumber:Hide()
 
-   -- Hide Actionbuttons
+   -- Hide actionbuttons
     for i = 1,12 do 
         _G["ActionButton"..i]:SetAlpha(0)
     
     end
+
+    -- Hide GCD Bling, thanks to https://wow.curseforge.com/projects/cooldownreadyflashdisabler
+    for k,v in pairs(_G) do
+        if type(v)=="table" and type(v.SetDrawBling)=="function" then
+            v:SetDrawBling(false)
+        
+        end
+    end
+    hooksecurefunc(getmetatable(ActionButton1Cooldown).__index, 'SetCooldown', function(self)
+        self:SetDrawBling(false)
+    end)
     
     
 end
