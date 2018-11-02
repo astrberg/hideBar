@@ -2,6 +2,6 @@
 ## Title: hideBar
 ## Notes: It's perfect
 ## Author: Aron Strandberg
-## Version: 0.5
+## Version: 1
 
 hide.lua
