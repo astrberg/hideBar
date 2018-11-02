@@ -1,7 +1,7 @@
 ## Interface: 80000
 ## Title: hideBar
-## Notes: See .lua resolve RegisterState
+## Notes: It's perfect
 ## Author: Aron Strandberg
-## Version: 0.2
+## Version: 0.5
 
 hide.lua

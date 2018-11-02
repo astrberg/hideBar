@@ -8,16 +8,13 @@ function Frame:OnEvent(event, ...)
     if event == "ADDON_LOADED" then
         local addon = ...
     if addon == "hideBar" then
-
-        -- Hide action buttons and the multibarframes
-        for id = 1, NUM_ACTIONBAR_BUTTONS do
-            RegisterStateDriver(_G["ActionButton" .. id], "visibility", "[exists] show; hide")
-            end
-            RegisterStateDriver(MultiBarBottomLeft, "visibility", "[exists] show; hide")
-            RegisterStateDriver(MultiBarBottomRight, "visibility", "[exists] show; hide")
-        
-
-    -- Hide frames and buttons    
+ 
+   
+    -- Multibar
+    MultiBarBottomRight:SetAlpha(0)
+    MultiBarBottomLeft:SetAlpha(0)
+    
+    -- Hide frame and buttons
     MainMenuBarArtFrameBackground:Hide()
     MainMenuBarArtFrame.LeftEndCap:Hide()
     MainMenuBarArtFrame.RightEndCap:Hide()
@@ -25,8 +22,15 @@ function Frame:OnEvent(event, ...)
     ActionBarDownButton:Hide()
     StatusTrackingBarManager:Hide()
     MainMenuBarArtFrame.PageNumber:Hide()
+
+   -- Hide Actionbuttons
+    for i = 1,12 do 
+        _G["ActionButton"..i]:SetAlpha(0)
     
     end
+    
+    
+end
 end
 end
 
