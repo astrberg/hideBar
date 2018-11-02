@@ -1,0 +1,6 @@
+## Interface: 80000
+## Title: hideBar
+## Author: Aron Strandberg
+## Version: 0.1
+
+hide.lua
