@@ -45,7 +45,7 @@ function Hide_Bling()
 end
 
 -- Counter the MultiActionBar update function
-hooksecurefunc("MultiActionBar_Update", Hide_Handler)
+--hooksecurefunc("MultiActionBar_Update", Hide_Handler)
 
 --run
 Hide:SetScript("OnEvent", Hide_Handler)
