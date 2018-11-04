@@ -50,8 +50,10 @@ hooksecurefunc("MultiActionBar_Update", Hide_Handler)
 --run
 Hide:SetScript("OnEvent", Hide_Handler)
 Hide:RegisterEvent("PLAYER_ENTERING_WORLD")
--- Solved issue with showing abilities when moving abilities or hovering spell in spellbook
+-- Solved issue with abilities showing when moving abilities or hovering spell in spellbook
 Hide:RegisterEvent("ACTIONBAR_HIDEGRID")
+-- Solved issue with some abilities showing when cooldown started/ended
+Hide:RegisterEvent("ACTIONBAR_UPDATE_COOLDOWN")
 
 
 
