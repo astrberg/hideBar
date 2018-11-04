@@ -1,5 +1,4 @@
 -- Author: Aron Strandberg
-
 --init
 local Hide = CreateFrame("Frame")
 function Hide_EventHandler(self, event)
@@ -12,25 +11,20 @@ function Hide_EventHandler(self, event)
     end
 end
 
-
 function Hide_Bar()
-    -- Hide specific frames and buttons
-        MainMenuBarArtFrameBackground:Hide()
-        MainMenuBarArtFrame.LeftEndCap:Hide()
-        MainMenuBarArtFrame.RightEndCap:Hide()
-        ActionBarUpButton:Hide()
-        ActionBarDownButton:Hide()
-        StatusTrackingBarManager:Hide()
-        MainMenuBarArtFrame.PageNumber:Hide()
+    MainMenuBarArtFrameBackground:Hide()
+    MainMenuBarArtFrame.LeftEndCap:Hide()
+    MainMenuBarArtFrame.RightEndCap:Hide()
+    ActionBarUpButton:Hide()
+    ActionBarDownButton:Hide()
+    StatusTrackingBarManager:Hide()
+    MainMenuBarArtFrame.PageNumber:Hide()
 end
 
 function Hide_ActionButton()
 -- Hide actionbuttons
     for i = 1,12 do 
         _G["ActionButton".. i]:Hide()
-        --_G["ActionButton" .. i]:UnregisterAllEvents()
-        
-        
 
     end
 end
@@ -52,7 +46,6 @@ end
 --run
 Hide:SetScript("OnEvent", Hide_EventHandler)
 Hide:RegisterEvent("PLAYER_ENTERING_WORLD")
-
 
 
 
