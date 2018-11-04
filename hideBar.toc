@@ -1,6 +1,6 @@
 ## Interface: 80000
 ## Title: hideBar
-## Notes: It's perfect
+## Notes: Bug with ActionButton5 showing when used
 ## Author: Aron Strandberg
 ## Version: 1
 
