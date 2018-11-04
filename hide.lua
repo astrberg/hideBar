@@ -2,12 +2,16 @@
 --init
 local Hide = CreateFrame("Frame")
 function Hide_EventHandler(self, event)
--- This solved issues with api calls if player not fully loaded
-    if(event == "PLAYER_ENTERING_WORLD" or event == "ACTIONBAR_HIDEGRID") then
+-- This solved issue with api calls
+    if(event == "PLAYER_ENTERING_WORLD") then
         Hide_ActionButton()
         Hide_Bar()
         Hide_Bling()
 
+    end
+    -- Opening spellbook or dragging spell will show abilities, atleast try hide them after...
+    if(event == "ACTIONBAR_HIDEGRID") then
+        Hide_ActionButton()
     end
 end
 
