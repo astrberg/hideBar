@@ -8,8 +8,8 @@ function Hide_Handler(self, event)
         Hide_Bling()
 
     end
-end
 
+end
 
 
 function Hide_Bar()
@@ -24,9 +24,10 @@ function Hide_Bar()
 end
 
 function Hide_ActionButton()
--- Hide actionbuttons
+    -- Hide actionbuttons
     for i = 1,12 do 
         _G["ActionButton".. i]:Hide()
+        
 
     end
 end
@@ -43,6 +44,8 @@ function Hide_Bling()
     self:SetDrawBling(false)
     end)
 end
+
+
 
 -- Counter the MultiActionBar update function
 --hooksecurefunc("MultiActionBar_Update", Hide_Handler)
