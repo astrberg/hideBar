@@ -4,7 +4,6 @@ local Hide = CreateFrame("Frame")
 function Hide_Handler(self, event)
     Hide_ActionButton()
     if(event == "PLAYER_ENTERING_WORLD") then
-        Hide_ActionButton()
         Hide_Bar()
         Hide_Bling()
 
@@ -21,7 +20,7 @@ function Hide_Bar()
     ActionBarDownButton:Hide()
     StatusTrackingBarManager:Hide()
     MainMenuBarArtFrame.PageNumber:Hide()
-    
+
 end
 
 function Hide_ActionButton()
