@@ -4,15 +4,10 @@ local Hide = CreateFrame("Frame")
 function Hide_Handler(self, event)
     Hide_ActionButton()
     if(event == "PLAYER_ENTERING_WORLD") then
-
         Hide_ActionButton()
         Hide_Bar()
         Hide_Bling()
-    end
-    -- Solved issue with showing abilities when moving abilities or hovering spell in spellbook
-    if(event == "ACTIONBAR_HIDEGRID") then
-        Hide_ActionButton()
-    
+
     end
 end
 
@@ -26,6 +21,7 @@ function Hide_Bar()
     ActionBarDownButton:Hide()
     StatusTrackingBarManager:Hide()
     MainMenuBarArtFrame.PageNumber:Hide()
+    
 end
 
 function Hide_ActionButton()
@@ -55,6 +51,7 @@ hooksecurefunc("MultiActionBar_Update", Hide_Handler)
 --run
 Hide:SetScript("OnEvent", Hide_Handler)
 Hide:RegisterEvent("PLAYER_ENTERING_WORLD")
+-- Solved issue with showing abilities when moving abilities or hovering spell in spellbook
 Hide:RegisterEvent("ACTIONBAR_HIDEGRID")
 
 
