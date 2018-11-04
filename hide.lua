@@ -3,7 +3,7 @@
 local Hide = CreateFrame("Frame")
 function Hide_EventHandler(self, event)
 -- This solved issues with api calls if player not fully loaded
-    if(event == "PLAYER_ENTERING_WORLD") then
+    if(event == "PLAYER_ENTERING_WORLD" or event == "ACTIONBAR_HIDEGRID") then
         Hide_ActionButton()
         Hide_Bar()
         Hide_Bling()
@@ -46,6 +46,7 @@ end
 --run
 Hide:SetScript("OnEvent", Hide_EventHandler)
 Hide:RegisterEvent("PLAYER_ENTERING_WORLD")
+Hide:RegisterEvent("ACTIONBAR_HIDEGRID")
 
 
 
